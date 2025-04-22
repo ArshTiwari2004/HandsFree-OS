@@ -1,0 +1,54 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+
+# macOS system files
+.DS_Store
+
+# Logs
+*.log
+
+# OS junk
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDEs/editors
+.vscode/
+.idea/
+
+# Python environment files
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# PyCharm
+*.iml
+
+# VS Code workspace settings
+*.code-workspace
+
+# Local configuration files
+*.env
+.env.*
+
+# Compiled C extensions
+*.so
+
+# Media files (optional, if you generate temp videos/images)
+*.avi
+*.mp4
+*.mov
+*.jpg
+*.png
+
+# Any backup or cache folders you make
+cache/
+tmp/
