@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@material-icons/font": "^1.0.36",
+    "@react-firebase/auth": "^0.2.10",
+    "@react-firebase/firestore": "^0.5.5",
     "@tailwindcss/vite": "^4.1.4",
     "firebase": "^9.23.0",
     "react": "^19.0.0",
