@@ -4,27 +4,34 @@ import { AuthProvider } from './services/auth';
 import { FirebaseAppProvider } from 'reactfire';
 import Home from './pages/Home';
 import Training from './pages/Training';
-import Analytics from './pages/Analytics';
+// import Analytics from './pages/Analytics';
 import ProtectedRoute from './components/common/ProtectedRoute';
 import Login from './components/auth/Login';
 import DashboardLayout from './components/layout/DashboardLayout';
+import { FeedbackProvider } from './services/feedback';
+import { GestureSettingsProvider } from './services/gestureSettings';
+import { GestureHistoryProvider } from './services/gestureHistory';
 
-// Firebase configuration
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID,
-  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
+  apiKey: "AIzaSyDZ2fZuMn-6O1GKXiJ8-vg17qLpPvOcgO8",
+  authDomain: "handsfree-os.firebaseapp.com",
+  projectId: "handsfree-os",
+  storageBucket: "handsfree-os.firebasestorage.app",
+  messagingSenderId: "402930513336",
+  appId: "1:402930513336:web:d0773d32f670525a1e8b4d",
+  measurementId: "G-M131PNB992"
 };
 
 function App() {
   return (
     <FirebaseAppProvider firebaseConfig={firebaseConfig}>
       <AuthProvider>
-        <Router>
+        <FeedbackProvider>
+        <GestureSettingsProvider>
+        <GestureHistoryProvider>
+      <Router>
           <Routes>
             <Route path="/login" element={<Login />} />
             <Route element={<DashboardLayout />}>
@@ -38,14 +45,17 @@ function App() {
                   <Training />
                 </ProtectedRoute>
               } />
-              <Route path="/analytics" element={
+              {/* <Route path="/analytics" element={
                 <ProtectedRoute>
                   <Analytics />
                 </ProtectedRoute>
-              } />
+              } /> */}
             </Route>
           </Routes>
         </Router>
+        </GestureHistoryProvider>
+        </GestureSettingsProvider>
+        </FeedbackProvider>
       </AuthProvider>
     </FirebaseAppProvider>
   );
