@@ -8,22 +8,29 @@ export function SocketProvider({ children }) {
   const [isConnected, setIsConnected] = useState(false);
 
   useEffect(() => {
-    const socketInstance = io(process.env.REACT_APP_SOCKET_SERVER || 'http://localhost:5000', {
+    const serverURL = import.meta.env.VITE_SOCKET_SERVER || 'http://localhost:3000';
+    console.log('[Socket] Connecting to:', serverURL);
+
+    const socketInstance = io(serverURL, {
       transports: ['websocket'],
       reconnectionAttempts: 5,
     });
 
     socketInstance.on('connect', () => {
+      console.log('[Socket] Connected! Socket ID:', socketInstance.id);
       setIsConnected(true);
     });
 
-    socketInstance.on('disconnect', () => {
+    socketInstance.on('disconnect', (reason) => {
+      console.log('[Socket] Disconnected:', reason);
       setIsConnected(false);
     });
 
     setSocket(socketInstance);
+    console.log('[Socket] Instance created');
 
     return () => {
+      console.log('[Socket] Disconnecting...');
       socketInstance.disconnect();
     };
   }, []);
@@ -36,5 +43,11 @@ export function SocketProvider({ children }) {
 }
 
 export const useSocket = () => {
-  return useContext(SocketContext);
+  const context = useContext(SocketContext);
+  if (!context) {
+    console.warn('[Socket] useSocket must be used within a SocketProvider');
+  } else {
+    console.log('[Socket] useSocket hook accessed');
+  }
+  return context;
 };

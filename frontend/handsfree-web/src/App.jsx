@@ -11,6 +11,7 @@ import DashboardLayout from './components/layout/DashboardLayout';
 import { FeedbackProvider } from './services/feedback';
 import { GestureSettingsProvider } from './services/gestureSettings';
 import { GestureHistoryProvider } from './services/gestureHistory';
+import { SocketProvider } from './services/socket';
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -28,6 +29,7 @@ function App() {
   return (
     <FirebaseAppProvider firebaseConfig={firebaseConfig}>
       <AuthProvider>
+        <SocketProvider>
         <FeedbackProvider>
         <GestureSettingsProvider>
         <GestureHistoryProvider>
@@ -56,6 +58,7 @@ function App() {
         </GestureHistoryProvider>
         </GestureSettingsProvider>
         </FeedbackProvider>
+        </SocketProvider>
       </AuthProvider>
     </FirebaseAppProvider>
   );
