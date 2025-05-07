@@ -136,11 +136,11 @@ Open a Pull Request
 
 
 ## ✉️ Contact
-Project Maintainer: Arsh Tiwari 
-Mail : arshtiwari12345@gmail.com
+- Project Maintainer: Arsh Tiwari 
+- Mail : arshtiwari12345@gmail.com
 
-Project Link: 
-
+### Project Link: Currently the frontend is hosted on [
+Handsfree OS](https://hands-free-os.vercel.app/login)
 
 
 
