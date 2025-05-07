@@ -1,8 +1,18 @@
+<div align="center">
+
 # HandsFree OS - Gesture-Controlled Accessibility Interface
+
+
+An innovative assistive technology that enables computer control through hand gestures, designed for differently-abled users and hands-free interaction.
 
 ![HandsFree OS Demo](demo.gif) <!-- Add a demo gif later -->
 
-An innovative assistive technology that enables computer control through hand gestures, designed for differently-abled users and hands-free interaction.
+<p align="center">
+  <img src="./process-flow-diagram.png" alt="Process Flow Diagram" />
+</p>
+</div>
+
+
 
 
 ## 🌟 Key Features
