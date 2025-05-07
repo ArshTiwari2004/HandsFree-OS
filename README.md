@@ -59,8 +59,77 @@ cd frontend
 npm install
 cp .env.example .env  # Update with your Firebase config
 npm start
+```
+
+### 2. Python Backend Setup
+```bash
+cd gesture-detection
+pip install -r requirements.txt
+python -m gesture_detection.main
+```
+
+### 3. Firebase Setup
+```bash
+Create a Firebase project at firebase.google.com
+Enable Google Authentication
+Update .env file with your Firebase config
+```
+
+### 4. Running the Application
+```bash
+# Start Python Service (in one terminal):
+cd gesture-detection && python -m gesture_detection.main
+
+# Start React Frontend (in another terminal):
+cd frontend && npm start
+```
+
+## ✋ Default Gestures
+
+| Gesture       | Action             |
+|---------------|--------------------|
+| ✋ Open Palm   | Show Desktop       |
+| 👍 Thumbs Up   | Volume Up          |
+| 👎 Thumbs Down | Volume Down        |
+| 👌 OK Sign     | Play/Pause Media   |
+| ➡️ Swipe Right | Next Tab           |
+| ⬅️ Swipe Left  | Previous Tab       |
 
 
+
+## Project Structure
+```bash
+handsfree-os/
+├── frontend/               # React application
+├── gesture-detection/      # Python gesture service
+│   ├── actions/            # System control modules
+│   ├── hand_landmarks/     # Gesture processing
+│   ├── utils/              # Helper functions
+│   └── main.py             # Main service entry
+└── docs/                   # Documentation
+```
+
+
+
+## 🤝 Contributing
+We welcome contributions! Please follow these steps:
+
+Fork the repository
+
+Create your feature branch (git checkout -b feature/AmazingFeature)
+
+Commit your changes (git commit -m 'Add some amazing feature')
+
+Push to the branch (git push origin feature/AmazingFeature)
+
+Open a Pull Request
+
+
+## ✉️ Contact
+Project Maintainer: Arsh Tiwari 
+Mail : arshtiwari12345@gmail.com
+
+Project Link: 
 
 
 
